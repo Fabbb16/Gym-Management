@@ -1,0 +1,48 @@
+<odoo>
+    <record id="wb_rec_tree_view" model="ir.ui.view">
+        <field name="name">wb.rec.tree.view</field>
+        <field name="model">wb.rec</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="last_name"/>
+                <field name="phone"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="wb_rec_form_view" model="ir.ui.view">
+        <field name="name">wb.rec.form.view</field>
+        <field name="model">wb.rec</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="last_name"/>
+                        <field name="gender"/>
+                        <field name="phone"/>
+                        <field name="date_of_birth"/>
+                        <field name="api_key"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="wb_rec_action" model="ir.actions.act_window">
+        <field name="name">Reception</field>
+        <field name="res_model">wb.rec</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="gym_root_menu"
+            name="Stafasani Gym"/>
+
+  <menuitem id="wb_rec_menu" name="Configuration" parent="gym_root_menu"
+                  sequence="1"/>
+
+  <menuitem id="wb_rec_sub_menu" parent="wb_rec_menu" name="Reception" action="wb_rec_action" sequence="1"/>
+
+
+</odoo>

@@ -1,0 +1,42 @@
+<odoo>
+    <record id="wb_equipment_tree_view" model="ir.ui.view">
+        <field name="name">wb.equipment.tree.view</field>
+        <field name="model">wb.equipment</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="wb_equipment_form_view" model="ir.ui.view">
+        <field name="name">wb.equipment.form.view</field>
+        <field name="model">wb.equipment</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="wb_equipment_action" model="ir.actions.act_window">
+        <field name="name">Equipments</field>
+        <field name="res_model">wb.equipment</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="gym_root_menu"
+            name="Stafasani Gym"/>
+
+  <menuitem id="wb_equipment_menu" name="Equipments" parent="gym_root_menu"
+                  action="wb_equipment_action" sequence="1"/>
+
+  <menuitem id="wb_equipment_sub_menu" parent="wb_equipment_menu" name="Classes List"/>
+
+</odoo>

@@ -1,0 +1,49 @@
+<odoo>
+    <record id="gym_class_tree_view" model="ir.ui.view">
+        <field name="name">gym.class.tree.view</field>
+        <field name="model">gym.class</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="capacity"/>
+                <field name="trainer_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="gym_class_form_view" model="ir.ui.view">
+        <field name="name">gym.class.form.view</field>
+        <field name="model">gym.class</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="capacity"/>
+                        <field name="trainer_id"/>
+                        <field name="member_id"/>
+                        <field name="equipments_id"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="gym_class_action" model="ir.actions.act_window">
+        <field name="name">Gym Class</field>
+        <field name="res_model">gym.class</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="gym_root_menu"
+            name="Stafasani Gym"/>
+
+  <menuitem id="gym_class_menu" name="Gym Classes" parent="gym_root_menu"
+                  action="gym_class_action" sequence="1"/>
+
+  <menuitem id="gym_class_sub_menu" parent="gym_class_menu" name="Classes List"/>
+
+</odoo>

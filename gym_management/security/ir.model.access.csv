@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_wb_member_user,access_wb_member_user,model_wb_member,base.group_user,1,1,1,1
+access_wb_trainer_user,access_wb_trainer_user,model_wb_trainer,base.group_user,1,1,1,1
+access_wb_membership_user,access_wb_membership_user,model_wb_membership,base.group_user,1,1,1,1
+
+access_gym_class_user,access_gym_class_user,model_gym_class,base.group_user,1,1,1,1
+access_wb_equipment_user,access_wb_equipment_user,model_wb_equipment,base.group_user,1,1,1,1
+access_wb_schedule_user,access_wb_schedule_user,model_wb_schedule,base.group_user,1,1,1,1
+access_wb_subscription_user,access_wb_subscription_user,model_wb_subscription,base.group_user,1,1,1,1
+
+access_wb_payment_user,access_wb_payment_user,model_wb_payment,base.group_user,1,1,1,1
+access_wb_rec_user,access_wb_rec_user,model_wb_rec,base.group_user,1,1,1,1
+access_wb_diet_user,access_wb_diet_user,model_wb_diet,base.group_user,1,1,1,1

@@ -1,0 +1,47 @@
+<odoo>
+    <record id="wb_subscription_tree_view" model="ir.ui.view">
+        <field name="name">wb.subscription.tree.view</field>
+        <field name="model">wb.subscription</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="member_id"/>
+                <field name="end_date"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="wb_subscription_form_view" model="ir.ui.view">
+        <field name="name">wb.subscription.form.view</field>
+        <field name="model">wb.subscription</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="member_id"/>
+                        <field name="membership_id"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                        <field name="status"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="wb_subscription_action" model="ir.actions.act_window">
+        <field name="name">Subscription</field>
+        <field name="res_model">wb.subscription</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="gym_root_menu"
+            name="Stafasani Gym"/>
+
+  <menuitem id="wb_subscription_menu" name="Subscription" parent="gym_root_menu"
+                  action="wb_subscription_action" sequence="1"/>
+
+  <menuitem id="wb_subscription_sub_menu" parent="wb_subscription_menu" name="Subscriptions List"/>
+
+</odoo>

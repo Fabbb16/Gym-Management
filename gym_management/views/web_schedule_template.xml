@@ -1,0 +1,34 @@
+<odoo>
+    <data>
+        <template id="schedule_template" name="Schedule">
+            <t t-call="website.layout">
+                <div class="container">
+                    <h1>Class Schedule</h1>
+                    <t t-if="schedules">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Class</th>
+                                    <th>Time</th>
+                                    <th>Location</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="schedules" t-as="sche">
+                                    <tr>
+                                        <td><t t-esc="sche.class_id.name"/></td>
+                                        <td><t t-esc="sche.start_time"/></td>
+                                        <td><t t-esc="sche.location"/></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </t>
+                    <t t-else="">
+                        <p>No schedule found.</p>
+                    </t>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

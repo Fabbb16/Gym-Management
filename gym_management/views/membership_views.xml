@@ -1,0 +1,42 @@
+<odoo>
+    <record id="wb_membership_tree_view" model="ir.ui.view">
+        <field name="name">wb.membership.tree.view</field>
+        <field name="model">wb.membership</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="currency_id"/>
+                <field name="price"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="wb_membership_form_view" model="ir.ui.view">
+        <field name="name">wb.membership.form.view</field>
+        <field name="model">wb.membership</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="currency_id"/>
+                        <field name="price"/>
+                        <field name="duration"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="wb_membership_action" model="ir.actions.act_window">
+        <field name="name">Membership</field>
+        <field name="res_model">wb.membership</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="gym_root_menu" name="Stafasani Gym"/>
+
+    <menuitem id="wb_membership_menu" parent="gym_root_menu"
+              action="wb_membership_action" sequence="1"/>
+</odoo>

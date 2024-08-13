@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+        <template id="classes_template" name="Classes">
+            <t t-call="website.layout">
+                <div class="container">
+                    <h1>Classes</h1>
+                    <t t-if="classes">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Trainer</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="classes" t-as="gym">
+                                    <tr>
+                                        <td><t t-esc="gym.name"/></td>
+                                        <td><t t-esc="gym.description"/></td>
+                                        <td><t t-esc="gym.trainer_id.name"/></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </t>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

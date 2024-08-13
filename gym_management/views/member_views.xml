@@ -1,0 +1,54 @@
+<odoo>
+  <record id="wb_member_tree_view" model="ir.ui.view">
+    <field name="name">wb.member.tree.view</field>
+    <field name="model">wb.member</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+        <field name="last_name"/>
+        <field name="date_of_birth"/>
+        <field name="phone"/>
+        <field name="status"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="wb_member_form_view" model="ir.ui.view">
+    <field name="name">wb.member.form.view</field>
+    <field name="model">wb.member</field>
+    <field name="arch" type="xml">
+      <form>
+        <group>
+          <group>
+            <field name="name"/>
+            <field name="last_name"/>
+            <field name="date_of_birth"/>
+            <field name="address"/>
+            <field name="phone"/>
+            <field name="email"/>
+            <field name="joining_date"/>
+            <field name="expiry_date"/>
+            <field name="status"/>
+            <field name="membership_id"/>
+            <field name="diet_id"/>
+          </group>
+        </group>
+      </form>
+    </field>
+  </record>
+
+  <record id="wb_member_action" model="ir.actions.act_window">
+    <field name="name">Members</field>
+    <field name="res_model">wb.member</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <menuitem id="gym_root_menu"
+            name="Stafasani Gym"/>
+
+  <menuitem id="wb_member_menu" name="Members" parent="gym_root_menu"
+                  action="wb_member_action" sequence="1"/>
+
+  <menuitem id="wb_member_sub_menu" parent="wb_member_menu" name="Member's List"/>
+
+</odoo>
